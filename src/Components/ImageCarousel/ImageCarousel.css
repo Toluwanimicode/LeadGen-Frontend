@@ -1,0 +1,24 @@
+/* Ensure these styles are loaded after the default owl.carousel.css */
+.owl-theme .owl-dots {
+    text-align: center;
+    margin-top: 20px; /* Adjust as needed */
+  }
+  
+  .owl-theme .owl-dots .owl-dot {
+    display: inline-block;
+    margin: 5px; /* Adjust as needed */
+  }
+  
+  .owl-theme .owl-dots .owl-dot span {
+    width: 12px;
+    height: 12px;
+    background: #ccc;
+    display: block;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+  }
+  
+  .owl-theme .owl-dots .owl-dot.active span {
+    background: #000; /* Active dot color */
+  }
+  

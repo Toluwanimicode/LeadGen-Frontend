@@ -1,0 +1,27 @@
+.about-header{
+    color: #282828;
+    font-size: 35px;
+    line-height: 40px;
+    font-weight: 500;    
+}
+.about-text{
+    font-weight: 400;
+    line-height: 28px;
+    font-size: 18px;
+    color: rgb(112, 112, 112);
+}
+.about-button button {
+    padding: 10px 20px; /* Add some padding to make the button look nicer */
+    border: 2px solid rgb(67, 203, 205); /* Border with specified color */
+    border-radius: 400px; /* Rounded corners */
+    background-color: white; /* Background color of the button */
+    color: rgb(67, 203, 205); /* Text color to match the border */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+}
+.about-button button:hover {
+    background-color: rgb(67, 203, 205); /* Change background on hover */
+    color: white; /* Change text color on hover */
+}
+

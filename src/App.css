@@ -1,0 +1,45 @@
+.Doom-text{
+    font-weight: 400;
+    line-height: 22px;
+    font-size: 40px;
+    color: rgb(78, 78, 78);
+    margin-left: 10px;
+}
+.Doom-image{
+    margin-right: 30px;
+}
+.Doom-container{
+    background-color: rgb(69,235,213);
+}
+.Home-header{
+    font-weight: 500;
+    line-height: 40px;
+    font-size: 35px;
+    color: #282828;
+}
+.Home-text{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: #707070;
+}
+.Home-content{
+    font-weight: 400;
+    line-height: 24px;
+    font-size: 14px;
+    color: #707070;
+}
+.Home-button button {
+    padding: 10px 20px; /* Add some padding to make the button look nicer */
+    border: 2px solid rgb(67, 203, 205); /* Border with specified color */
+    border-radius: 400px; /* Rounded corners */
+    background-color: white; /* Background color of the button */
+    color: rgb(67, 203, 205); /* Text color to match the border */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+}
+.Home-button button:hover {
+    background-color: rgb(67, 203, 205); /* Change background on hover */
+    color: white; /* Change text color on hover */
+}

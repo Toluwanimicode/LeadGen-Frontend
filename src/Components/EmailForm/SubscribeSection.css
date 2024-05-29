@@ -1,0 +1,125 @@
+.bg-emerald {
+  background-color: #50c878; /* Emerald color */
+}
+
+.padding-60px-tb {
+  padding: 60px 0;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.equalize {
+  display: flex;
+  align-items: center;
+}
+
+.display-table {
+  display: table;
+}
+
+.display-table-cell-vertical-middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.xs-text-center {
+  text-align: center;
+}
+
+.title-large {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.alt-font {
+  font-family: 'Helvetica', sans-serif; /* Adjust the font family as needed */
+}
+
+.text-white {
+  color: white;
+}
+
+.margin-three-top {
+  margin-top: 3px;
+}
+
+.margin-three-bottom {
+  margin-bottom: 3px;
+}
+
+.sm-margin-six-bottom {
+  margin-bottom: 6px;
+}
+
+.xs-no-margin {
+  margin: 0;
+}
+
+.xs-padding-bottom-20px {
+  padding-bottom: 20px;
+}
+
+.xs-title-large {
+  font-size: 20px; /* Adjust for smaller screens */
+}
+
+.display-block {
+  display: block;
+}
+
+.position-relative {
+  position: relative;
+}
+
+
+
+.margin-ten-top {
+  margin-top: 10px;
+}
+
+.medium-input {
+  width: calc(100% - 50px); /* Adjust width as needed */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.text-transform-none {
+  text-transform: none;
+}
+
+.xs-width-100 {
+  width: 100%;
+}
+
+.xs-no-margin {
+  margin: 0;
+}
+.default-submit {
+  background-color: #fff; /* Set background color to white */
+  border: 2px solid #47DF84; /* Set border color to #47DF84 */
+  border-radius: 20px; /* Set border radius */
+  cursor: pointer;
+  font-size: 24px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tz-icon-color {
+  color: #fff; /* Set initial color of the icon to white */
+}
+
+.default-submit:hover .tz-icon-color {
+  color: #555; /* Change color of the icon on hover */
+}
+
+

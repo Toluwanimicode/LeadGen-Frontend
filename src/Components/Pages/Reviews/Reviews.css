@@ -1,0 +1,9 @@
+.images{
+    border-radius: 100px;
+}
+.name{
+    line-height: 22px;
+    font-weight: 600;
+    font-size: 15px;
+    color: rgb(40, 40, 40);
+}

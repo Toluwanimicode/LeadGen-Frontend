@@ -1,0 +1,47 @@
+.display-block {
+    display: block;
+}
+.position-relative {
+    position: relative;
+}
+.margin-ten-top {
+    margin-top: 10px;
+}
+.medium-input {
+    width: calc(100% - 40px); /* Adjust width as needed */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+.text-transform-none {
+    text-transform: none;
+}
+.xs-width-100 {
+    width: 100%;
+}
+.xs-no-margin {
+    margin: 0;
+}
+.default-submit {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+.text-large {
+    font-size: 24px;
+}
+.text-medium-gray {
+    color: #888;
+}
+.tz-icon-color {
+    color: #888;
+}
+.default-submit:hover .tz-icon-color {
+    color: #555; /* Change color on hover */
+}
