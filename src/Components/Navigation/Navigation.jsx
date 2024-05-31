@@ -16,12 +16,12 @@ const Navigation = ({ backgroundColor }) => {
           </a>
         </div>
         <div className="hidden md:flex space-x-6">
-          <a href="#content-section13" className="hover:text-gray-400 text-white">ABOUT US</a>
-          <a href="#content-section17" className="hover:text-gray-400 text-white">FEATURES</a>
-          <a href="#content-section9" className="hover:text-gray-400 text-white">COLORS</a>
-          <a href="#content-section2" className="hover:text-gray-400 text-white">DESIGN</a>
-          <a href="#testimonials-section4" className="hover:text-gray-400 text-white">REVIEWS</a>
-          <a href="#feature-section32" className="bg-white text-black px-4 py-2 rounded">
+          <a href="#about" className="hover:text-gray-400 text-white">ABOUT US</a>
+          <a href="#features" className="hover:text-gray-400 text-white">FEATURES</a>
+          <a href="#colors" className="hover:text-gray-400 text-white">COLORS</a>
+          <a href="#design" className="hover:text-gray-400 text-white">DESIGN</a>
+          <a href="#reviews" className="hover:text-gray-400 text-white">REVIEWS</a>
+          <a href="#products" className="bg-white text-black px-4 py-2 rounded">
             <i className="fa fa-shopping-bag text-black mr-2" aria-hidden="true"></i>BUY NOW
           </a>
         </div>
@@ -37,12 +37,12 @@ const Navigation = ({ backgroundColor }) => {
         </div>
       </div>
       <div className={`mobile-menu ${menuOpen ? 'block' : 'hidden'} md:hidden`}>
-        <a href="#content-section13" className="block py-2 px-4 text-sm text-white">ABOUT US</a>
-        <a href="#content-section17" className="block py-2 px-4 text-sm text-white">FEATURES</a>
-        <a href="#content-section9" className="block py-2 px-4 text-sm text-white">COLORS</a>
-        <a href="#content-section2" className="block py-2 px-4 text-sm text-white">DESIGN</a>
-        <a href="#testimonials-section4" className="block py-2 px-4 text-sm text-white">REVIEWS</a>
-        <a href="#feature-section32" className="block py-2 px-4 text-sm bg-white text-black">BUY NOW</a>
+        <a href="#about" className="block py-2 px-4 text-sm text-white">ABOUT US</a>
+        <a href="#features" className="block py-2 px-4 text-sm text-white">FEATURES</a>
+        <a href="#colors" className="block py-2 px-4 text-sm text-white">COLORS</a>
+        <a href="#design" className="block py-2 px-4 text-sm text-white">DESIGN</a>
+        <a href="#reviews" className="block py-2 px-4 text-sm text-white">REVIEWS</a>
+        <a href="#products" className="block py-2 px-4 text-sm bg-white text-black">BUY NOW</a>
       </div>
     </nav>
   );

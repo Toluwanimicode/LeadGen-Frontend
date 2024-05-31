@@ -11,32 +11,51 @@ const HeadphoneCarousel = () => {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
   const nextSlide = () => {
-    setActiveSlideIndex(prevIndex => (prevIndex + 1) % slidesData.length);
+    setActiveSlideIndex((prevIndex) => (prevIndex + 1) % slidesData.length);
   };
 
   const prevSlide = () => {
-    setActiveSlideIndex(prevIndex => (prevIndex - 1 + slidesData.length) % slidesData.length);
+    setActiveSlideIndex((prevIndex) => (prevIndex - 1 + slidesData.length) % slidesData.length);
   };
 
   return (
-    <div className="relative">
+    <div className="relative max-w-4xl mx-auto mt-10">
       <div className="overflow-hidden">
-        <div className="flex transition-transform duration-300" style={{ transform: `translateX(-${activeSlideIndex * 100}%)` }}>
-          {slidesData.map((slide, index) => (
-            <div key={slide.id} className="w-full flex-shrink-0">
-              <img src={slide.imageUrl} alt={slide.altText} className="w-full h-auto" />
+        <div
+          className="flex transition-transform duration-300 ease-in-out"
+          style={{ transform: `translateX(-${activeSlideIndex * 100}%)` }}
+        >
+          {slidesData.map((slide) => (
+            <div key={slide.id} className="w-full flex-shrink-0 px-4">
+              <img
+                src={slide.imageUrl}
+                alt={slide.altText}
+                className="w-full h-auto lg:max-w-xs mx-auto"
+              />
             </div>
           ))}
         </div>
       </div>
-      <button className="absolute top-1/2 transform -translate-y-1/2 left-2" onClick={prevSlide}>
-        <i className="fa fa-long-arrow-left text-3xl"></i>
+      <button
+        className="absolute top-1/2 transform -translate-y-1/2 left-4 p-2 focus:outline-none"
+        onClick={prevSlide}
+      >
+        <i className="fa fa-long-arrow-left text-3xl text-black"></i>
       </button>
-      <button className="absolute top-1/2 transform -translate-y-1/2 right-2" onClick={nextSlide}>
-        <i className="fa fa-long-arrow-right text-3xl"></i>
+      <button
+        className="absolute top-1/2 transform -translate-y-1/2 right-4 p-2 focus:outline-none"
+        onClick={nextSlide}
+      >
+        <i className="fa fa-long-arrow-right text-3xl text-black"></i>
       </button>
     </div>
   );
 };
 
 export default HeadphoneCarousel;
+
+
+
+
+
+

@@ -47,11 +47,11 @@ const Carousel = ({ onBackgroundChange }) => {
                             <p className="text-xl font-semibold mb-10">{slide.content}</p>
                         </div>
                         <div className="flex justify-center space-x-4">
-                            <a href="#feature-section32" className="btn btn-medium bg-white text-gray-800 rounded-full px-6 py-2 flex items-center">
+                            <a href="#products" className="btn btn-medium bg-white text-gray-800 rounded-full px-6 py-2 flex items-center">
                                 <span className="mr-2">PURCHASE NOW</span>
                                 <i className="fa fa-angle-right"></i>
                             </a>
-                            <a href="#content-section13" className="btn btn-medium border-2 border-white text-white rounded-full px-6 py-2 flex items-center">
+                            <a href="#about" className="btn btn-medium border-2 border-white text-white rounded-full px-6 py-2 flex items-center">
                                 <span className="mr-2">READ MORE</span>
                                 <i className="fa fa-angle-right"></i>
                             </a>
