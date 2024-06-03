@@ -1,18 +1,32 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import './SubscribeSection.css'; // Assuming this file contains the styles
+import './SubscribeSection.css';
 
 const SubscribeSection = () => {
   const [email, setEmail] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (event) => {
     setEmail(event.target.value);
   };
 
+  const validateEmail = (email) => {
+    // Basic email validation regex
+    const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,6}$/;
+    return re.test(String(email).toLowerCase());
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (!validateEmail(email)) {
+      setErrorMessage('Please enter a valid email address.');
+      return;
+    }
+    setIsLoading(true);
+    setErrorMessage('');
     try {
       const response = await fetch('https://leadgen-backend.onrender.com/subscribe', {
         method: 'POST',
@@ -21,16 +35,21 @@ const SubscribeSection = () => {
         },
         body: JSON.stringify({ email }),
       });
+      setIsLoading(false);
       if (response.ok) {
         setSuccessMessage('Subscription added');
-        setEmail(''); // Clear the email input field
+        setEmail('');
         setTimeout(() => {
-          setSuccessMessage(''); // Hide the success message after 3 seconds
+          setSuccessMessage('');
         }, 3000);
+      } else if (response.status === 400) {
+        setErrorMessage('Email already subscribed');
       } else {
-        console.error('Failed to add subscriber');
+        setErrorMessage('Failed to add subscriber');
       }
     } catch (error) {
+      setIsLoading(false);
+      setErrorMessage('Error adding subscriber. Please try again later.');
       console.error('Error adding subscriber:', error);
     }
   };
@@ -50,6 +69,7 @@ const SubscribeSection = () => {
             <div className="display-table-cell-vertical-middle">
               <div className="display-block position-relative subscribe-style4 margin-ten-top">
                 {successMessage && <div className="alert alert-success">{successMessage}</div>}
+                {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
                 <form onSubmit={handleSubmit} className="position-relative">
                   <input
                     className="medium-input text-transform-none xs-width-100 xs-no-margin"
@@ -59,9 +79,10 @@ const SubscribeSection = () => {
                     type="email"
                     value={email}
                     onChange={handleChange}
+                    disabled={isLoading}
                   />
-                  <button className="default-submit text-large" type="submit">
-                    <FontAwesomeIcon icon={faEnvelope} className=" tz-icon-color" />
+                  <button className="default-submit text-large" type="submit" disabled={isLoading}>
+                    {isLoading ? 'Subscribing...' : <FontAwesomeIcon icon={faEnvelope} className="tz-icon-color" />}
                   </button>
                 </form>
               </div>
@@ -74,6 +95,7 @@ const SubscribeSection = () => {
 };
 
 export default SubscribeSection;
+
 
 
 

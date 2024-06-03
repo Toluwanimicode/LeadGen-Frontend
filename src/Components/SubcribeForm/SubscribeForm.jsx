@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import './SubscribeForm.css'; // Create a CSS file for styles
+import './SubscribeForm.css'; // Ensure this file contains appropriate styles
 
 const SubscribeForm = () => {
   const [email, setEmail] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -24,10 +25,18 @@ const SubscribeForm = () => {
           setSuccessMessage(''); // Hide the success message after 3 seconds
         }, 3000);
       } else {
-        console.error('Failed to add subscriber');
+        const errorData = await response.json();
+        setErrorMessage(errorData.message || 'Failed to add subscriber');
+        setTimeout(() => {
+          setErrorMessage(''); // Hide the error message after 3 seconds
+        }, 3000);
       }
     } catch (error) {
+      setErrorMessage('Error adding subscriber');
       console.error('Error adding subscriber:', error);
+      setTimeout(() => {
+        setErrorMessage(''); // Hide the error message after 3 seconds
+      }, 3000);
     }
   };
 
@@ -38,6 +47,7 @@ const SubscribeForm = () => {
   return (
     <div className="display-block position-relative subscribe-style4 margin-ten-top">
       {successMessage && <div className="alert alert-success">{successMessage}</div>}
+      {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
       <form onSubmit={handleSubmit} className="position-relative">
         <input
           className="medium-input text-transform-none xs-width-100 xs-no-margin"
@@ -57,4 +67,5 @@ const SubscribeForm = () => {
 };
 
 export default SubscribeForm;
+
 
